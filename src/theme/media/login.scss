@@ -1,0 +1,22 @@
+@import './index.scss';
+
+/* 页面宽度小于576px
+------------------------------- */
+@media screen and (max-width: $xs) {
+	.login-card {
+		width: 92% !important;
+		padding: 32px 20px 24px !important;
+		.login-logo {
+			margin-bottom: 20px !important;
+			.logo-title { font-size: 20px !important; }
+		}
+	}
+}
+
+/* 页面宽度大于576px小于992px
+------------------------------- */
+@media screen and (min-width: $xs) and (max-width: $md) {
+	.login-card {
+		width: 400px !important;
+	}
+}

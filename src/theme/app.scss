@@ -1,0 +1,282 @@
+/* 初始化样式
+------------------------------- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+:root {
+	/* 字体系统 — Fira Code (数据/标题) + Fira Sans (正文) */
+	--prev-font-mono: 'Fira Code', 'SF Mono', 'Menlo', monospace;
+	--prev-font-sans: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+	/* ---- 浅色主题（默认） ---- */
+
+	/* 主题色 — 科技青 */
+	--prev-color-primary: #00B8D4;
+	--prev-color-primary-light-1: rgba(0,184,212,.8);
+	--prev-color-primary-light-3: rgba(0,184,212,.6);
+	--prev-color-primary-light-6: rgba(0,184,212,.2);
+	--prev-color-primary-light-7: rgba(0,184,212,.12);
+	--prev-color-primary-light-8: rgba(0,184,212,.06);
+	--prev-color-primary-light-9: rgba(0,184,212,.03);
+	--prev-color-primary-dark: #0092A8;
+
+	/* 布局背景 — 浅蓝白 */
+	--prev-bg-menuBar: #E8F0F8;
+	--prev-bg-menuBarColor: #1E293B;
+	--prev-bg-topBar: #FFFFFF;
+	--prev-bg-topBarColor: #1E293B;
+	--prev-bg-columnsMenuBar: #E8F0F8;
+	--prev-bg-columnsMenuBarColor: #1E293B;
+	--prev-bg-main-color: #EEF2F8;
+	--prev-bg-color: #E8ECF2;
+	--prev-bg-white: #FFFFFF;
+
+	/* 文字色 */
+	--prev-color-text-white: #FFFFFF;
+	--prev-color-text-black: #1A2332;
+	--prev-color-text-primary: #1A2332;
+	--prev-color-text-regular: #455A64;
+	--prev-color-text-secondary: #78909C;
+	--prev-color-text-placeholder: #B0BEC5;
+
+	/* 边框 */
+	--prev-color-hover: rgba(0,184,212,.06);
+	--prev-color-seting-main: #E8ECF2;
+	--prev-color-seting-aside: #DDE3ED;
+	--prev-color-seting-header: #CFD8E3;
+	--prev-border-color-hover: #00B8D4;
+	--prev-border-color-base: #D0D8E4;
+	--prev-border-color-light: #DDE3ED;
+	--prev-border-color-lighter: #E4EAF3;
+	--prev-border-color-extra-light: #EEF2F8;
+
+	/* 发光效果 */
+	--prev-glow-shadow: 0 0 16px rgba(0,184,212,.08);
+	--prev-glow-shadow-strong: 0 0 28px rgba(0,184,212,.14);
+	--prev-glow-border: 1px solid rgba(0,184,212,.1);
+	--prev-glass-bg: rgba(255,255,255,.8);
+	--prev-glass-blur: blur(12px);
+
+	/* 状态色 */
+	--prev-color-success: #00C853;
+	--prev-color-warning: #FF8F00;
+	--prev-color-danger: #E53935;
+	--prev-color-info: #00B8D4;
+}
+
+html,
+body,
+#app {
+	width: 100%;
+	height: 100%;
+	background-color: var(--prev-bg-main-color);
+	font-size: 14px;
+	font-family: var(--prev-font-sans);
+	color: var(--prev-color-text-regular);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* 主布局样式
+------------------------------- */
+.layout-container {
+	width: 100%;
+	height: 100%;
+	.layout-aside {
+		background: linear-gradient(180deg, #E8F0F8 0%, #DDE5F0 100%);
+		border-right: 1px solid var(--prev-border-color-base);
+		box-shadow: 2px 0 8px rgba(0,0,0,.04);
+		height: inherit;
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		overflow-x: hidden !important;
+		.el-scrollbar__view {
+			overflow: hidden;
+		}
+	}
+	.layout-header {
+		padding: 0 !important;
+		border-bottom: 1px solid var(--prev-border-color-base);
+		background: var(--prev-bg-topBar);
+		box-shadow: 0 1px 4px rgba(0,0,0,.04);
+	}
+	.layout-main {
+		padding: 0 !important;
+		overflow: hidden;
+		width: 100%;
+		background-color: var(--prev-bg-main-color);
+	}
+	.el-scrollbar {
+		width: 100%;
+	}
+	.layout-view-bg-white {
+		background: var(--prev-glass-bg);
+		backdrop-filter: var(--prev-glass-blur);
+		width: 100%;
+		height: 100%;
+		border-radius: 8px;
+		border: var(--prev-glow-border);
+	}
+	.layout-el-aside-br-color {
+		border-right: 1px solid rgba(0,212,255,.08);
+	}
+	.layout-aside-width-default {
+		width: 220px !important;
+		transition: width 0.3s ease;
+	}
+	.layout-aside-width64 {
+		width: 64px !important;
+		transition: width 0.3s ease;
+	}
+	.layout-aside-width1 {
+		width: 1px !important;
+		transition: width 0.3s ease;
+	}
+	.layout-scrollbar {
+		@extend .el-scrollbar;
+		padding: 15px;
+	}
+	.layout-mian-height-50 {
+		height: calc(100vh - 50px);
+	}
+	.layout-columns-warp {
+		flex: 1;
+		display: flex;
+		overflow: hidden;
+	}
+	.layout-hide {
+		display: none;
+	}
+}
+
+/* 进度条颜色
+------------------------------- */
+#nprogress .bar {
+	background: var(--prev-color-primary) !important;
+}
+
+/* flex 弹性布局
+------------------------------- */
+.flex {
+	display: flex;
+}
+.flex-auto {
+	flex: 1;
+}
+.flex-center {
+	@extend .flex;
+	flex-direction: column;
+	width: 100%;
+	overflow: hidden;
+}
+.flex-margin {
+	margin: auto;
+}
+.flex-warp {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	margin: 0 -5px;
+	.flex-warp-item {
+		padding: 5px;
+		.flex-warp-item-box {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+/* 宽高 100%
+------------------------------- */
+.w100 {
+	width: 100% !important;
+}
+.h100 {
+	height: 100% !important;
+}
+.vh100 {
+	height: 100vh !important;
+}
+.max100vh {
+	max-height: 100vh !important;
+}
+.min100vh {
+	min-height: 100vh !important;
+}
+
+/* 颜色值
+------------------------------- */
+.color-primary {
+	color: var(--prev-color-primary);
+}
+.color-success {
+	color: var(--prev-color-success);
+}
+.color-warning {
+	color: var(--prev-color-warning);
+}
+.color-danger {
+	color: var(--prev-color-danger);
+}
+.color-info {
+	color: var(--prev-color-info);
+}
+
+/* 溢出省略号
+------------------------------- */
+.one-text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.two-text-overflow {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.overflow {
+	overflow: hidden !important;
+}
+
+/* 字体大小全局样式
+------------------------------- */
+@for $i from 10 through 32 {
+	.font#{$i} {
+		font-size: #{$i}px !important;
+	}
+}
+
+/* 外边距、内边距全局样式
+------------------------------- */
+@for $i from 5 through 35 {
+	.mt#{$i} {
+		margin-top: #{$i}px !important;
+	}
+	.mr#{$i} {
+		margin-right: #{$i}px !important;
+	}
+	.mb#{$i} {
+		margin-bottom: #{$i}px !important;
+	}
+	.ml#{$i} {
+		margin-left: #{$i}px !important;
+	}
+	.pt#{$i} {
+		padding-top: #{$i}px !important;
+	}
+	.pr#{$i} {
+		padding-right: #{$i}px !important;
+	}
+	.pb#{$i} {
+		padding-bottom: #{$i}px !important;
+	}
+	.pl#{$i} {
+		padding-left: #{$i}px !important;
+	}
+}
